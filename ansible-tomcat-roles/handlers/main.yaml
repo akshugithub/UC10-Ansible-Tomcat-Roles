@@ -1,6 +1,6 @@
 - name: Stop tomcat services
   shell: /usr/local/apache-tomcat-9.0.71/bin/shutdown.sh  
 
-- name: Start Tomcat
+- name: Start tomcat services
   shell: nohup /usr/local/apache-tomcat-9.0.71/bin/startup.sh
   
