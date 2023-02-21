@@ -3,20 +3,25 @@
       
     - name: remove war file from temp folder
       shell: rm -rf /tmp/hello-world-maven.war
+     
+    # - name: remove war file from temp dir
+     # ansible.builtin.file:
+     #  path: /tmp/hello-world-maven.war
+     #  state: absent
   
-    - name: "Pull artifact from nexus"
+    - name: "Pull war file from Nexus repository"
       maven_artifact:
        group_id: io.happycoding
        artifact_id: hello-world-maven
        extension: war
-       version: '{{ version }}' 
+       version: '{{ version }}'
        repository_url: "http://3.111.149.223:8081/repository/UC9-Repository/"
        username: admin
        password: nexusrepos
        dest: "/tmp/hello-world-maven.war"
        mode: '0644'
 
-    - name: download tomcat server packages
+    - name: Download tomcat packages
       get_url:
        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
        dest: /usr/local
