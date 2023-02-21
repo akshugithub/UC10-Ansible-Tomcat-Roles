@@ -19,19 +19,19 @@
 
     - name: download tomcat server packages
       get_url:
-       url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
+       url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
        dest: /usr/local
 
     - name: extract tomcat packages
       unarchive:
-       src: /usr/local/apache-tomcat-10.0.27.tar.gz
+       src: /usr/local/apache-tomcat-9.0.71/webapps/
        dest: /usr/local
        remote_src: yes
 
     - name: Copy the war file
       copy:
        src: /tmp/hello-world-maven.war
-       dest: /usr/local/apache-tomcat-10.0.27/webapps/
+       dest: /usr/local/apache-tomcat-9.0.71/webapps/
        remote_src: yes
        
        
