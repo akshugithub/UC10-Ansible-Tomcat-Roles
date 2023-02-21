@@ -39,5 +39,5 @@
        src: /var/lib/jenkins/workspace/UC10-Ansible-Tomcat-Roles/server.xml.j2
        dest: /usr/local/apache-tomcat-9.0.71/conf/server.xml
        mode: '0777'
-       notify: "Stop tomcat services"
-       notify: "Start Tomcat"
+      notify: "Stop tomcat services"
+      notify: "Start Tomcat"
