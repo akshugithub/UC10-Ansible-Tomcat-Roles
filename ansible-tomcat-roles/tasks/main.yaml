@@ -40,7 +40,7 @@
        
     - name: changing tomcat port number
       template:
-       src: /var/lib/jenkins/workspace/UC10-Ansible-Tomcat-Roles/ansible-tomcat-roles/templates/server.xml.j2
+       src: /var/lib/jenkins/workspace/UC10-Ansible Roles/ansible-tomcat-roles/templates/server.xml.j2
        dest: /usr/local/apache-tomcat-9.0.71/conf/server.xml
        mode: '0777'
       notify: "Stop tomcat services"
