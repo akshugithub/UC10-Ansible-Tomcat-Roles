@@ -31,11 +31,6 @@
        src: /usr/local/apache-tomcat-9.0.71.tar.gz
        dest: /usr/local
        remote_src: yes
-       
-    - name: Make sure the current version of ‘sysstat’ is installed.
-      dnf:
-        name: apache-tomcat
-        state: latest
 
     - name: Copy the war file
       copy:
